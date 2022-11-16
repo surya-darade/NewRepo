@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../../partials/user/header') %>
+        <title>Update Tasks</title>
+    </head>
+<body>
+
+    <%- include('../../partials/user/navbar') %>
+
+    <div class="container ">
+        <div class="row justify-content-center">
+            <div class="col-12 mt-1">
+                <h1 class="text-center">Update Task</h1>
+            </div>
+           
+            <div class="col-md-6 mt-2">
+                <div class="">
+                    <form action="/userUpdateTask/<%=results._id%>" method="post" class="" enctype="multipart/form-data">
+                        <div>
+                            <% if(alerts.error){ %> 
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <%= alerts.error %>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                            <% } %>
+                            <% if(alerts.success){ %> 
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <%= alerts.success %>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                            <% } %> 
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="title" class="form-control" placeholder="Task title" value="<%=results.title %>" readonly>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="desc" class="form-control" placeholder="Description" value="<%=results.desc %>" readonly>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="task" class="form-control d-none" rows="3" required><%=results.body %></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="username" class="form-control d-none" placeholder="Username" value="<%=results.username %>" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-check-label" for="exampleRadios1">Task Uploaded Date</label>
+                            <input type="date" name="date" id="" value="<%=results.date %>" class="form-control" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-check-label" for="exampleRadios1">Start Date</label>
+                            <input type="date" name="start_date" id="" value="<%=results.start_time %>" class="form-control" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-check-label" for="exampleRadios1">End Date</label>
+                            <input type="date" name="end_date" id="" value="<%=results.end_time %>" class="form-control" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Attachment</label>
+                            <input type="file" name="file" class="form-control" id="" required>
+                        </div>
+                        <label for="">Status</label>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="" value="Completed" <% if(results.status == "Completed"){  %> checked <% } %>>
+                                <label class="form-check-label" for="Radios1">Completed</label>
+                              </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="" value="Inprogress" <% if(results.status == "Inprogress"){  %> checked <% } %>>
+                                <label class="form-check-label" for="Radios3">
+                                  Inprogress
+                                </label>
+                              </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="" value="Incompleted" <% if(results.status == "Incompleted"){  %> checked <% } %>>
+                                <label class="form-check-label" for="Radios2">
+                                  Incompleted
+                                </label>
+                              </div>
+                        </div>
+                       <div class="text-center">
+                        <button type="submit" class="btn btn-primary w-50">Submit</button>
+                       </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('../../partials/user/footer') %>
+</body>
+
+</html>

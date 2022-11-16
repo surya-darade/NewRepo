@@ -1,0 +1,41 @@
+[{
+  "_id": {
+    "$oid": "62e6438236efdcab7bd186a2"
+  },
+  "name": "surya",
+  "username": "user",
+  "path": "E:\\VS Code\\NodeJs\\app\\app\\uploads\\1659257730598-Suraykant_Darade_1.pdf",
+  "date": "2022-07-31",
+  "fileName": "1659257730598-Suraykant_Darade_1.pdf",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62e64c1d36efdcab7bd186d9"
+  },
+  "name": "darade",
+  "username": "user",
+  "path": "E:\\VS Code\\NodeJs\\app\\app\\uploads\\1659259933821-mongodb.pdf",
+  "date": "2022-07-31",
+  "fileName": "1659259933821-mongodb.pdf",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62e6510736efdcab7bd186e6"
+  },
+  "name": "abc",
+  "username": "user",
+  "path": "E:\\VS Code\\NodeJs\\app\\app\\uploads\\1659261191191-Notes.txt",
+  "date": "2022-07-31",
+  "fileName": "1659261191191-Notes.txt",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62edfcd677f8361f804c95c0"
+  },
+  "name": "zxcvbnm",
+  "username": "user",
+  "path": "E:\\VS Code\\NodeJs\\app\\app\\resume\\1659763926544-rajvardhan.png",
+  "date": "2022-08-06",
+  "fileName": "1659763926544-rajvardhan.png",
+  "__v": 0
+}]

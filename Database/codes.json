@@ -1,0 +1,111 @@
+[{
+  "_id": {
+    "$oid": "62e3c42a4de9acbc93b15353"
+  },
+  "name": "Code name",
+  "desc": "Description",
+  "code": "Write Code here",
+  "date": "2022-07-07",
+  "status": "Show",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62e3c65f4de9acbc93b15362"
+  },
+  "name": "Dropdowns BS4",
+  "desc": "The .dropdown class is used to indicate a dropdown menu. Use the .dropdown-menu class to actually build the dropdown menu. To open the dropdown menu, use a button or a link with a class of .dropdown-toggle and data-toggle=\"dropdown\".",
+  "code": "<div class=\"dropdown\">\r\n    <button type=\"button\" class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\">\r\n      Dropdown button\r\n    </button>\r\n    <div class=\"dropdown-menu\">\r\n      <a class=\"dropdown-item\" href=\"#\">Link 1</a>\r\n      <a class=\"dropdown-item\" href=\"#\">Link 2</a>\r\n      <a class=\"dropdown-item\" href=\"#\">Link 3</a>\r\n    </div>\r\n  </div>",
+  "date": "2022-07-29",
+  "status": "Show",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62e66b2abee1992676e45e45"
+  },
+  "name": "Card BS4",
+  "desc": "A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options. If you’re familiar with Bootstrap 3, cards replace our old panels, wells, and thumbnails. Similar functionality to those components is available as modifier classes for cards.",
+  "code": "<div class=\"card\" style=\"width: 18rem;\">\r\n  <img src=\"...\" class=\"card-img-top\" alt=\"...\">\r\n  <div class=\"card-body\">\r\n    <h5 class=\"card-title\">Card title</h5>\r\n    <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>\r\n    <a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>\r\n  </div>\r\n</div>",
+  "date": "2022-07-31",
+  "status": "Show",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62e7d9e8d7341fdfa188c511"
+  },
+  "name": "Play Videos in Iframe",
+  "desc": "Playing videos in Iframe using JavaScript",
+  "code": "<iframe src=\"https://player.vimeo.com/video/66966424\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>\r\n\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script>\r\n<script>\r\n\r\n    var iframe = document.querySelector('iframe');\r\n    var player = new Vimeo.Player(iframe);\r\n\r\n    player.on('play', function() {\r\n        alert('You have played the video')\r\n    });\r\n        player.on('ended', function(){\r\n        alert('Video play completed');\r\n    });\r\n\r\n    player.getVideoTitle().then(function(title) {\r\n        console.log('title:', title);\r\n    });\r\n</script>",
+  "date": "2022-08-01",
+  "status": "Show",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62edf8d877f8361f804c9598"
+  },
+  "name": "Alert box BS4",
+  "desc": "Create an Alert Box ",
+  "code": "<div class=\"alert alert-warning alert-dismissible\">\r\n        \t<button class=\"btn close\" data-dismiss=\"alert\">&times;</button>\r\n            <h3 class=\"text-center\">This is Warning Alert!!!</h3>\r\n        </div>\r\n\r\n<!-- CDN Links -->\r\n<!-- \r\n<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css\">\r\n  <script src=\"https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js\"></script>\r\n  <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js\"></script>\r\n  <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js\"></script>\r\n\r\n-->\r\n",
+  "date": "2022-08-06",
+  "status": "Show",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62edf96877f8361f804c959c"
+  },
+  "name": "Modal Using BS4",
+  "desc": "Create a Modal ",
+  "code": "<div>\r\n\t<button class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#modal\">Modal</button>\r\n    \r\n\t<div class=\"modal fade modal-dismissible\" id=\"modal\">\r\n    \t<div class=\"modal-dialog\">\r\n        \t<div class=\"modal-content\">\r\n            \t<div class=\"modal-header\">\r\n            \t<h1 class=\"\">Header</h1>\r\n                <button class=\"btn close\" data-dismiss=\"modal\">&times;</button>\r\n                </div>\r\n\r\n                <div class=\"modal-body\">\r\n                \t<p>This is modal Body</p>\r\n                </div>\r\n\r\n                <div class=\"modal-footer\">\r\n                \t<p> Footer</p>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<!-- CDN Links\r\n\r\n  <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css\">\r\n  <script src=\"https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js\"></script>\r\n  <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js\"></script>\r\n  <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js\"></script>\r\n\r\n-->",
+  "date": "2022-08-06",
+  "status": "Show",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62edf9c177f8361f804c95a0"
+  },
+  "name": "Carousel BS4",
+  "desc": "Create a carousel",
+  "code": "<div class=\"carousel slide\" id=\"carousel\" data-ride=\"carousel\">\r\n    \t\r\n     \t<ul class=\"carousel-indicators\">\r\n          <li data-target=\"#demo\" data-slide-to=\"0\" class=\"active\"></li>\r\n          <li data-target=\"#demo\" data-slide-to=\"1\"></li>\r\n          <li data-target=\"#demo\" data-slide-to=\"2\"></li>\r\n        </ul>\r\n        \r\n        <div class=\"carousel-inner\">\r\n        \t<div class=\"carousel-item active\">\r\n            \t<img src=\"https://images.unsplash.com/photo-1562690868-60bbe7293e94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cm9zZSUyMGZsb3dlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60\" width=\"100%\" height=\"500px\" alt=\"Chicago\">\r\n            </div>\r\n            \r\n            <div class=\"carousel-item\">\r\n            <img src=\"https://images.unsplash.com/photo-1594505270395-a47b48ffbc74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80\" width=\"100%\" height=\"500px\" alt=\"Chicago\">\r\n            </div>\r\n            \r\n            <div class=\"carousel-item\">\r\n            <img src=\"https://images.unsplash.com/photo-1599421498111-ad70bebb536f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80\" width=\"100%\" height=\"500px\" alt=\"Chicago\">\r\n            </div>\r\n        </div>\r\n        \r\n        <a href=\"#carousel\" class=\"carousel-control-prev\" data-slide=\"prev\">\r\n        \t<span class=\"carousel-control-prev-icon\"></span>\r\n        </a>\r\n        \r\n        <a href=\"#carousel\" class=\"carousel-control-next\" data-slide=\"next\">\r\n        \t<span class=\"carousel-control-next-icon\"></span>\r\n        </a>\r\n        \r\n    </div>\r\n\r\n<!-- CDN Links \r\n\r\n  <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css\">\r\n  <script src=\"https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js\"></script>\r\n  <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js\"></script>\r\n  <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js\"></script>\r\n\r\n-->",
+  "date": "2022-08-06",
+  "status": "Show",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62edfc2977f8361f804c95b5"
+  },
+  "name": "Progress Bar BS4",
+  "desc": "To create a default progress bar, add a .progress class to a container element and add the .progress-bar class to its child element. Use the CSS width property to set the width of the progress bar:",
+  "code": "<div class=\"progress\">\r\n  <div class=\"progress-bar\" style=\"width:70%\"></div>\r\n</div>\r\n\r\n  <div class=\"progress\">\r\n    <div class=\"progress-bar bg-success\" style=\"width:50%\"></div>\r\n  </div><br>",
+  "date": "2022-08-06",
+  "status": "Show",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62ee41530d5d42f04d567e76"
+  },
+  "name": "Palindrome || Revers || Sum of Digit || C language",
+  "desc": "Palindrome || Revers || Sum of Digit || C language",
+  "code": "#include <stdio.h>\r\n\r\nint main() {\r\n    \r\n    int num,sum=0,rem=0,temp,rev=0;\r\n    \r\n    printf(\"Enter any Number: \");\r\n    scanf(\"%d\",&num);\r\n    temp=num;\r\n    while(num > 0)\r\n    {\r\n        rem = num % 10;\r\n        \r\n        rev = rem + (rev * 10);\r\n        \r\n        sum = sum + rem;\r\n        \r\n        num = num / 10;\r\n    }\r\n    \r\n    printf(\"Reverse Number is: %d\\n\",rev);\r\n    printf(\"Sum of digit of given number: %d\\n\",sum);\r\n    if(temp == rev)\r\n    {\r\n        printf(\"Given number is Palindrom.\");\r\n    }\r\n    else\r\n    {\r\n        printf(\"Given number is not Palindrom\");\r\n    }\r\n\r\n    return 0;\r\n}",
+  "date": "2022-08-06",
+  "status": "Show",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62ee45ea0d5d42f04d567e7a"
+  },
+  "name": "Prime number from 1 to 100",
+  "desc": "Prime number from 1 to 100",
+  "code": "#include <stdio.h>\r\n\r\nint main() {\r\n    \r\n  int i,j,flag=0;\r\nfor(i=1; i <=100;i++)\r\n{\r\n    flag = 0;\r\n    for(j=2;j<=i/2;j++)\r\n    {\r\n        if(i%j == 0)\r\n        {\r\n            flag=1;\r\n            break;\r\n        }\r\n        \r\n    }\r\n    if(flag == 0 && i != 1)\r\n        {\r\n            printf(\" %d \",i);\r\n        }\r\n}\r\n    return 0;\r\n}",
+  "date": "2022-08-06",
+  "status": "Show",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62ee517c0d5d42f04d567ec3"
+  },
+  "name": "Check Prime number or not",
+  "desc": "Check the given number is prime number or not ",
+  "code": "#include <stdio.h>\r\n\r\nint main() {\r\n\r\n  int n, i, flag = 0;\r\n  printf(\"Enter a positive integer: \");\r\n  scanf(\"%d\", &n);\r\n\r\n  // 0 and 1 are not prime numbers\r\n  // change flag to 1 for non-prime number\r\n  if (n == 0 || n == 1)\r\n    flag = 1;\r\n\r\n  for (i = 2; i <= n / 2; ++i) {\r\n\r\n    // if n is divisible by i, then n is not prime\r\n    // change flag to 1 for non-prime number\r\n    if (n % i == 0) {\r\n      flag = 1;\r\n      break;\r\n    }\r\n  }\r\n\r\n  // flag is 0 for prime numbers\r\n  if (flag == 0)\r\n    printf(\"%d is a prime number.\", n);\r\n  else\r\n    printf(\"%d is not a prime number.\", n);\r\n\r\n  return 0;\r\n}",
+  "date": "2022-08-06",
+  "status": "Show",
+  "__v": 0
+}]

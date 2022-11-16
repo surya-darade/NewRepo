@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/header') %>
+
+    <body onload="bodyload()">
+
+        <%- include('../partials/navbar') %>
+            <div class="arrow">
+                <a href="#home" class="fa fa-arrow-up" aria-hidden="true"></a>
+            </div>
+            <section class="section-gap" id="about">
+                <div class="container pl-0 pr-0">
+                    <div class="row mr-0">
+                        <div class="col-md-12 mb-4">
+                            <div class="">
+                                <h2 class="heading text-center header-spacing">About Us</h2>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="">
+                                <p class="text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis
+                                    asperiores totam incidunt sapiente facere voluptates fugiat beatae optio, deserunt
+                                    suscipit. Officiis nam eveniet natus! Eaque exercitationem autem nemo voluptates
+                                    voluptate!in them, which will help them in the long run. From my personal experience
+                                    I can say that Symbiosis as an Institute has a lot of transparency,
+                                    integrity and the entire year has always been meticulously planned by the school in
+                                    advance. I take this opportunity to thank the school and wish them success in the
+                                    future.
+
+                                    <span class="dots" id="dots">...</span>
+                                    <span class="more" id="more">
+                                        in them, which will help them in the long run. From my personal experience I can
+                                        say that Symbiosis as an Institute has a lot of transparency,
+                                        integrity and the entire year has always been meticulously planned by the school
+                                        in advance. I take this opportunity to thank the school and wish them success in
+                                        the future.
+                                    </span>
+                                    <a class="btn readMore" onclick="readMore()" id="myBtn">read more <img
+                                            src="assets/img/Icon arrow.svg" alt="btn aro"></a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="assets/img/about.jpg" id="" alt="about us img"
+                                class="img-responsive p-2 about-us-img" width="100%">
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </section>
+            <!-- About us section ends here -->
+
+            <!-- Our Specification starts here-->
+            <section class="section-gap" id="specialities">
+                <div class="container">
+                    <div class="row">
+
+                    </div>
+                </div>
+            </section>
+            <!-- Our Specification ends here -->
+
+            <!-- Why us starts here-->
+            <section class="section-gap" id="why-us">
+                <div class="container">
+                    <div class="row">
+
+                    </div>
+                </div>
+            </section>
+            <!-- Why us ends here -->
+
+            <!-- Contact us section starts here -->
+            <section class="section-gap" id="contact">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-12">
+                            <div class="">
+                                <h2 class="heading text-center header-spacing">
+                                    Contact Us
+                                </h2>
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <p class="">Support</p>
+                                    <p class="">E-mail: surya.group@gmail.com</p>
+                                    <p class="">Tel.no.: 7038896698</p>
+                                </div>
+                                <p class="text-center"><span class="information">For more information...</span><span
+                                        class="interact">Interact with Us!</span></p>
+                                <div class="d-flex justify-content-center">
+                                    <form method="post" class=" mb-5" id="enquery-form" style="width: 40%!important;">
+                                        <div id="errortop2" style="color: red;"></div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="name" id="name"
+                                                aria-describedby="helpId" placeholder="Your Name"
+                                                onchange="showFormField()">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" name="email" id="email"
+                                                onchange="showFormField()" placeholder="Your Email Id">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="mobile" id="mobile"
+                                                onchange="showFormField()" placeholder="Your mobile Number">
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea class="form-control" name="query" id="query"
+                                                onchange="showFormField()" rows="3">For Your Query</textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="g-recaptcha"
+                                                data-sitekey="6LcyCFUeAAAAAFgpeB7FBdGRvz3FJnqYZkrfyP8z"></div>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary w-100"
+                                            id="sbmt-btn">Submit</button>
+                                        <p id="note" class="text-danger"><b>After filling info. press Tab key..</b></p>
+
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5 thankyou" id="thankyou1">
+                            <div class="" id="thankyou">
+                                <div class="msg text-center">
+                                    Thank You for Enquiry!!!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Contact us section ends here -->
+
+            <section class="section-gap header">
+                <div class="container">
+                    <div class="row  justify-content-center">
+                        <div class="col-sm-3 mt-3" data-aos="flip-left" data-aos-duration="2000">
+                            <h6 class="text-white">INDUSTRIES</h6>
+                            <hr>
+                            <div class="text1">
+                                <p class="text-white">What We Do</p>
+                                <p class="text-white">Retail</p>
+                                <p class="text-white">Safety</p>
+                                <p class="text-white">Working Chain</p>
+                                <p class="text-white">News</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 mt-3" data-aos="flip-right" data-aos-duration="2000">
+                            <h6 class="text-white">COMPANY</h6>
+                            <hr>
+                            <div class="">
+                                <p class="text-white">History</p>
+                                <p class="text-white">Investors</p>
+                                <p class="text-white">Leadership</p>
+
+                            </div>
+                        </div>
+                        <div class="col-sm-3 mt-3" data-aos="flip-left" data-aos-duration="2000">
+                            <h6 class="text-white">CAREER</h6>
+                            <hr>
+                            <div class="">
+                                <p class="text-white">
+                                    Career
+                                </p>
+
+                            </div>
+
+                        </div>
+                        <div class="col-sm-3 mt-3 mb-2" data-aos="flip-right" data-aos-duration="2000">
+                            <h6 class="text-white">LOCATION</h6>
+                            <hr>
+                            <div class="">
+                                <p class="text-white">Pune</p>
+                                <p class="text-white">E-mail: </p>
+                                <p class="text-white">Tel.no.:</p>
+                            </div>
+                        </div>
+                        <div class="col-md-5 mt-5 mb-3" data-aos="fade-down" data-aos-duration="2000">
+                            <hr>
+                            <h6 class="text-white">FOLLOWS US</h6>
+
+                            <a href="#" class="fab fa-facebook-f text-white"></a>
+                            <a href="#" class="fab fa-whatsapp text-white"></a>
+                            <a href="#" class="fab fa-youtube text-white"></a>
+                            <a href="#" class="fab fa-instagram text-white"></a>
+                            <a href="#" class="fab fa-linkedin text-white" aria-hidden="true"></a>
+                        </div>
+                        <div class="col-12 mt-2">
+                            
+                            <!-- <p class="text-white">&copy; Freelancing Club</p> -->
+                            <p class="text-white">&copy; Surya Group of Company</p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <section>
+                <div class="cookie">
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        <p>We and selected third parties use cookies or similar technologies for technical purposes, to
+                            enhance site navigation, analyze site usage, assist in our marketing efforts, and for other
+                            purposes as specified in the <strong>Cookie Policy</strong> </p>
+                    </div>
+
+                </div>
+            </section>
+            <section class="">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#notification-modal"
+                    id="notification">Notifications</button>
+
+                <div class="contianer">
+                    <div class="modal fade" id="notification-modal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2 class="heading text-center"><%= notifications[0].header %></h2>
+                                    <button class="btn btn-clode" data-dismiss="modal"><span
+                                            aria-hidden="true">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    
+                                    <p>
+                                        <%= notifications[0].body %></p>
+                                </div>
+                                <div class="modal-footer d-flex justify-content-between ">
+                                    <p style="font-size: 14px!important;"><%= notifications[0].footer %></p>
+                                    <button class="btn btn-warning"
+                                        data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <%- include('../partials/footer') %>

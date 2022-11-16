@@ -1,0 +1,19 @@
+[{
+  "_id": {
+    "$oid": "62e3a8bba7b3e47ce4977264"
+  },
+  "name": "cddd",
+  "email": "surya@gmail.com",
+  "mobile": "1234567890",
+  "query": "For Your Querysdf",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62edfb7777f8361f804c95aa"
+  },
+  "name": "surya",
+  "email": "surya@gmail.com",
+  "mobile": "1234567890",
+  "query": "this is my query",
+  "__v": 0
+}]

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../../partials/user/header') %>
+    <body>
+
+
+        <%- include('../../partials/user/navbar') %>
+
+
+            <div class="container">
+                <div class="row d-flex  justify-content-center">
+
+                    <% codes.forEach(function(element){ %>
+                        <div class="col-12 mt-5">
+                            <div class="card">
+                                <div class="card-header" style="background: #b3d7ff;"><%= element.name %> </div>
+                                <div class="card-body" style="background: lavender;">
+                                    
+                                    <pre class="card-text"><%= element.code %> </pre>
+                                </div>
+                                <div class="card-footer" style="background: #b3d7ff;">
+                                    <p class="text-black" style="color: #fff;">
+                                        <strong>Description: </strong>
+                                        <%= element.desc %>
+                                    </p>
+                                    <p class="text-black" style="color: #fff;">
+                                        <strong>Date: <%= element.date %></strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <% }); %>
+
+                </div>
+            </div>
+
+            <%- include('../../partials/user/footer') %>
+
+    </body>
+
+</html>

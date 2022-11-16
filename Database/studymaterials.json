@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "62e7d40173b2fcbeba88589d"
+  },
+  "name": "asdfgh",
+  "desc": "material",
+  "code": "Write Code here",
+  "date": "2022-08-13",
+  "video_link": "https://player.cloudinary.com/embed/?cloud_name=demo&public_id=elephants&cloudinary%5Bcname%5D=myCname&player%5Bloop%5D=true&source%5Bsource_types%5D%5B0%5D=mp4%2Fh265&source%5Bsource_types%5D%5B1%5D=mp4",
+  "path": "E:\\VS Code\\NodeJs\\app\\app\\studyMaterial\\1659360256837-Kamli_-_Dhoom_3_[Deutsch].mp4",
+  "fileName": "1659360256837-Kamli_-_Dhoom_3_[Deutsch].mp4",
+  "status": "Hide",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62e7d959d7341fdfa188c50d"
+  },
+  "name": "Code name",
+  "desc": "material",
+  "code": "Write Code here",
+  "date": "2022-08-02",
+  "video_link": "https://player.cloudinary.com/embed/?cloud_name=demo&public_id=elephants&cloudinary%5Bcname%5D=myCname&player%5Bloop%5D=true&source%5Bsource_types%5D%5B0%5D=mp4%2Fh265&source%5Bsource_types%5D%5B1%5D=mp4",
+  "path": "E:\\VS Code\\NodeJs\\app\\app\\studyMaterial\\1659361625412-Hardy_Sandhu_-_Backbone___Jaani___B_Praak___Zenith_Sidhu___Latest_Romantic_S.mp4",
+  "fileName": "1659361625412-Hardy_Sandhu_-_Backbone___Jaani___B_Praak___Zenith_Sidhu___Latest_Romantic_S.mp4",
+  "status": "Hide",
+  "__v": 0
+}]

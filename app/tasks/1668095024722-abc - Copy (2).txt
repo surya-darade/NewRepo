@@ -1,0 +1,368 @@
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
+
+<?php $non_development_project=0; ?>
+<?php $development_project=0; ?>
+<?php foreach($project_category as $category) {?>
+  <?php //echo "<pre>";print_r($category);?>
+
+  <?php if($category->cat_name=="Landing Page" || $category->cat_name=="Website development" || $category->cat_name=="AMC"){
+    $development_project++;
+  }
+  
+  else{
+    $non_development_project++;
+  }?>
+
+  <?php }?>
+
+
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#">
+					<em class="fa fa-home"></em>
+				</a></li>
+				<li class="active">Vice President</li>
+			</ol>
+		</div><!--/.row-->
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">Set Budget</h1>
+			</div>
+		</div><!--/.row--> 
+	 
+          <div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+          	<?php echo $project_details[0]->payment[0]->project_name; ?> 
+
+          </div>
+					<div class="panel-body" style="background-color:rgba(31, 8, 8, 0.04);">
+            <dl class="dl-horizontal" id="dl-horizontal">
+             
+                  <dt>Project ID</dt><dd>SRVPR<?php echo $project_details[0]->project_id; ?></dd>
+                  <dt>PO Number</dt><dd><?php echo $project_details[0]->payment[0]->po_number; ?></dd>
+                  <dt>PO Amount</dt><dd>INR <?php echo $project_details[0]->totalAmount[0]->value; ?></dd>
+                  <?php if(isset($project_details[0]->payment[0]->payment_mode)){ /*?>
+                  <dt>Advanced Paid By </dt><dd><?php echo $project_details[0]->payment[0]->payment_mode; ?></dd>
+                <?php } ?>
+                  <?php if(isset($project_details[0]->payment[0]->reference_number)){?>
+                  <dt>Advanced Ref No. </dt><dd><?php echo $project_details[0]->payment[0]->reference_number; ?></dd>
+                  <?php */} ?>
+                
+            </dl>
+           
+				</div>
+       	</div><!-- /.panel-->
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            Allocate Budget
+         </div>
+        <div class="panel-body" style="background-color:rgba(31, 8, 8, 0.04);">
+         <form method="post" onsubmit="return checksetbug();" action="<?php echo base_url();?>admin_home/project_vp_allocate_post"> 
+
+          <input id="project_id" name="project_id" value="<?php echo $project_details[0]->project_id; ?>" type="hidden">
+
+          <input id="total_allocated_budget_vp" name="total_allocated_budget_vp" type="hidden">
+
+
+          <table class="table table-responsive table-bordered">
+            <tr bgcolor="#eee">
+              <td>Objective</td>
+               <td>Date/days</td>
+              <td>Per day Budget</td>
+             
+              <td>Budget</td>
+            </tr>
+             <?php $d=0; 
+                    $totalSaleAmt=0;
+                    $totalSaleAmt1=0;
+                    $agamt=0;
+             foreach($project_details[0]->deliverables as $deliverable) {?>
+            <tr><td colspan="2"><h4><?php echo $deliverable->name; ?></h4></td></tr>
+                  <input id="name" name="objectives[<?php echo $d?>][name]" value="<?php echo $deliverable->name; ?>" type="hidden">
+                  <input id="id" name="objectives[<?php echo $d?>][d_id]" value="<?php echo $deliverable->project_obective_id; ?>" type="hidden">
+
+                  <?php
+                  // echo "<pre>";print_r($project_details[0]->deliverables);die();
+
+                    $i=0; foreach($deliverable->categories as $category){
+                      
+                      if($deliverable->name=='Agency Retainer' || $deliverable->name=='Technology Solutions'){
+                    $agamt=$agamt+$category->totalBudget;
+                    }
+                    $totalSaleAmt=$totalSaleAmt+$category->totalBudget;
+                    $totalSaleAmt1=$totalSaleAmt1+$category->totalallocatedbudget;
+                    $startdate=$category->platforms[0]->startdate;
+                    $startdate = strtotime(date(str_replace('/', '-', $startdate)));
+                    $enddate=$category->platforms[0]->enddate;
+                    $enddate = strtotime(date(str_replace('/', '-', $enddate)));
+
+                    $diff = $enddate - $startdate; 
+      
+    // 1 day = 24 hours 
+    // 24 * 60 * 60 = 86400 seconds 
+    $days= abs(floor($diff / 86400)+1); 
+    if($days==0){ $days=1; }
+                  ?>
+
+
+            <tr>
+             <td><?php echo $category->cat_name; ?><br><small>Allocated Budget by Sales : <strong>INR <?php echo $category->totalBudget; ?></strong></small><br><small>Allocated Budget by Finance : <strong>INR <?php echo $category->totalallocatedbudget; ?></strong></small></td>
+ <td>
+                        Start Date : <strong><?php echo $category->platforms[0]->startdate?></strong><br>
+                        End Date : <strong><?php echo $category->platforms[0]->enddate?></strong><br>
+                        Number Of Days : <strong><?php echo $days?></strong><br>
+                    </td>
+                    <td>
+                        <span class="objectives_<?php echo $d?>_category_<?php echo $i?>_budget" >
+                          <?php 
+                          if($category->totalallocatedbudgetvp !=""){
+                          echo round($category->totalallocatedbudgetvp/$days,2);   
+                          }else{
+                          echo round($category->totalallocatedbudget/$days,2);}?>
+                          </span></td>
+              <td>
+             <div class="form-group col-md-4 alp" <?php if($deliverable->name=='Agency Retainer'){ echo "style='display:block;'";}?>>
+              <input <?php if($deliverable->name=='Agency Retainer'){?> disabled <?php }?> onkeypress="return isNumber(event,this.value,'9');" type="text" id="temporary" <?php if($deliverable->name=='Agency Retainer'){?>value="<?php echo $category->totalBudget; ?>" <?php }else{?> value="<?php if($category->totalallocatedbudgetvp !=""){ echo $category->totalallocatedbudgetvp; }else{ echo $category->totalallocatedbudget; }?>" <?php }?> class="checkmax_vp form-control h-35" data-max="<?php echo $category->totalallocatedbudget; ?>" data-tax="objectives[<?php echo $d?>][category][<?php echo $i?>][budgetInTerm]" data-per="100" data-tax="objectives[<?php echo $d?>][category][<?php echo $i?>][budgetInTerm]" placeholder="Enter Amount" data-days="<?php echo $days?>" required data-spanid="objectives_<?php echo $d?>_category_<?php echo $i?>_budget"/>
+
+              <input class="al" name="objectives[<?php echo $d?>][category][<?php echo $i?>][budget]" value="<?php echo $category->totalallocatedbudget; ?>" type="hidden">
+              <input id="totalBudget_category" name="totalBudget_category" value="<?php echo $category->totalBudget; ?>" type="hidden">
+
+              <input id="id" name="objectives[<?php echo $d?>][category][<?php echo $i?>][id]" value="<?php echo $category->project_cat_id; ?>" type="hidden">
+
+              <input id="id" name="objectives[<?php echo $d?>][category][<?php echo $i?>][name]" value="<?php echo $category->cat_name; ?>" type="hidden">
+
+            </div>
+             
+             <div class="form-group col-md-4" <?php if($deliverable->name=='Agency Retainer'){ echo "style='display:none;'";}?>>
+              <select class="setperFinalo1 amt1  form-control" name="objectives[<?php echo $d?>][category][<?php echo $i?>][budgetInTerm]" id="amt1"><option value="Amount">Amt</option>
+                                        <option value="%">%</option>
+              </select>
+           </div>
+              </td>
+            </tr>
+            <?php $i++; }?>
+            <?php $d++; }?>
+
+             <tr>  
+              <td colspan="3"> Total Retainer and Technology Solution Amount</td>
+              <td><strong>INR <span class="agtotal"> <?php echo $agamt;?></span></strong></td>
+            </tr>
+            <tr bgcolor="#eee">
+              <td colspan="3"> Total Allocated Budget </td>
+              <td><strong>INR <span class="settotalAllocated_vp"></span></strong></td>
+            </tr>
+            <tr>  
+              <td  colspan="3"> Total Allocated Budget By  Sales </td>
+              <td><strong>INR <?php echo $totalSaleAmt;?>
+              </strong></td>
+            </tr>
+            <tr>  
+              <td  colspan="3"> Total Allocated Budget By  Finance </td>
+              <td><strong>INR <?php echo $totalSaleAmt1;?>
+              </strong></td>
+            </tr>
+            <input id="total_project_amount_vp" name="total_project_amount_vp" value="<?php echo $totalSaleAmt; ?>" type="hidden">
+            <input id="total_remaining_amount_vp" name="total_remaining_amount_vp" type="hidden">
+
+            <tr>
+              <!-- <td colspan="2" > <strong>You are giving Rs. 800000 for this project.</strong> -->
+              <div class="col-md-9">
+                  <div class="row">
+                    <h4 class="extra_title"><strong>Whom do you want to allocate the project</strong></h4>
+                  </div>
+              </div>
+
+              
+              
+
+              <select class="form-control" id="manager_and_TL" onclick="GetSelectedValue()" name="manager" required="">
+                <option value="">--select  Senior Account Manager/manager--</option>
+                <option value="0"<?php 
+                  if($single_project[0]->single_project=="0") { 
+                    echo " selected"; 
+                  } ?>>manager</option>
+                <option value="1" <?php if($single_project[0]->single_project=="1") { 
+                    echo " selected"; 
+                  } ?>>Senior Account Manager</option>
+              </select>
+
+              <input id="single_project" name="single_project" value="0" type="hidden">
+              <input id="single_project_status" name="single_project_status" value=<?php echo $single_project[0]->single_project ?> type="hidden">
+              
+              <div class="col-md-9" id="Srmanager_label">
+                  <div class="row">
+                    <h4 class="extra_title"><strong>Select the Senior Account Manager</strong></h4>
+                  </div>
+              </div>
+              
+              
+              <!-- <select class="form-control" id="Srmanager" name="sraccount_manager_id"  novalidate>
+
+                 <option value="">--Select Senior Account Manager--</option>
+                 <?php if(($non_development_project>=1 && $development_project>=1) || ($non_development_project>=1)){?>
+
+                 <?php foreach($sr_managers_list as $list){?>
+
+
+                      <option value="<?php echo $list->user_id ?>"<?php 
+                                        if($list->user_id == $project_details[0]->seniormanager[0]->manager_id) { 
+                                          echo " selected"; 
+                                        } ?>><?php echo $list->first_name.' '.$list->last_name; ?></option>
+                 <?php }?>
+                 <option <?php if( $project_details[0]->seniormanager[0]->manager_id == $this->session->userdata("user_id")){echo "selected='selected'";}?> value="<?php echo $this->session->userdata('user_id')?>"><?php echo $this->session->userdata("first_name")." ".$this->session->userdata("last_name")?></option>
+                 <?php }?>
+               
+                </select> -->
+
+                <!-- <div class="form-group"> -->
+                  <label for="country">Group Heads</label>
+                  <select class="form-control" id="country-dropdown">
+                  <option value="" disabled selected>Select Group head</option>
+
+                  <?php foreach($group_heads as $gh){?>
+                  <option value="<?php echo $gh->ghead_id ;?>"><?php echo $gh->first_name;?></option>
+                  <?php
+                  }
+                  ?>
+                  </select>
+                  <!-- </div> -->
+               <div class="col-md-9" id="manager_label">
+                  <div class="row">
+                    <h4 class="extra_title"><strong>Select Manager</strong></h4>
+                  </div>
+              </div>
+
+              <select class="form-control" id="manager" name="manager_id" novalidate>
+
+                <option value="">--Select Manager--</option>
+                
+
+                <?php if($non_development_project==1 && $development_project==0){?>
+
+                <?php foreach($manager_list as $list){?>
+                  <option value="<?php echo $list->user_id ?>"<?php 
+                  if($list->user_id == $manager_id[0]->manager_id || $list->user_id ==$non_dev_manager[0]->manager_id) { 
+                    echo " selected"; 
+                  } ?>><?php echo $list->first_name.' '.$list->last_name; ?></option>
+                <?php }?>
+                <?php }?>
+
+                
+                <?php if($development_project>=1 && $non_development_project==0){?>
+                  
+                  <?php foreach($dev_manager as $list){?>
+                  <option value="<?php echo $list->user_id ?>"<?php 
+                  if($list->user_id == $manager_id[0]->manager_id || $list->user_id ==$non_dev_manager[0]->manager_id || $list->user_id ==$dev_manager_amc_landing[0]->manager_id || $list->user_id ==$dev_manager_website[0]->manager_id) { 
+                    echo " selected"; 
+                  } ?>><?php echo $list->first_name.' '.$list->last_name; ?></option>
+                  <?php }?>
+
+
+
+                  <?php }?>
+
+
+
+                 
+              </select>
+
+
+
+               <hr style="border-top:1px #000 solid;">
+               <!-- <h4><strong>Set Criticality</strong></h4>  -->
+              <!-- <label class="radio-inline"><input type="radio" name="critical[]" value="Low" >Low</label> -->
+              <!-- <label class="radio-inline"><input type="radio" name="critical[]" value="Moderate">Moderate</label> -->
+              <!-- <label class="radio-inline"><input type="radio" name="critical[]" value="High">High</label> -->
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <button class="btn btn-primary">Assign</button>
+              </td> 
+            </tr>
+          </table>
+          </form>
+          <script type="text/javascript">
+            var agtotal=<?php echo $agamt;?>;
+          </script>
+          
+        </div>
+        </div><!-- /.panel-->
+				
+				</div><!-- /.panel-->
+			</div><!-- /.col-->
+    
+    </div>
+
+
+    <script>
+      var SingleProjectStatus=document.getElementById("single_project_status").value
+      console.log(SingleProjectStatus);
+      document.getElementById("Srmanager").style.display = "none";
+      document.getElementById("Srmanager_label").style.display = "none";
+      document.getElementById("manager").style.display = "none";
+      document.getElementById("manager_label").style.display = "none";
+      function GetSelectedValue(){
+				var e = document.getElementById("manager_and_TL");
+				var result = e.options[e.selectedIndex].value;
+        if(result=="1"){
+          document.getElementById("single_project").value = "1";
+          document.getElementById("Srmanager").style.display = "block";
+          document.getElementById("Srmanager_label").style.display = "block";
+
+          document.getElementById("manager").style.display = "none";
+          document.getElementById("manager_label").style.display = "none";
+
+
+        }
+        else if(result=="0"){
+          document.getElementById("single_project").value = "0"; 
+          document.getElementById("manager").style.display = "block";
+          document.getElementById("manager_label").style.display = "block";
+
+          document.getElementById("Srmanager").style.display = "none";
+          document.getElementById("Srmanager_label").style.display = "none";
+        }
+
+        else{
+          console.log("nothing to do");
+        }
+      }
+
+        if(SingleProjectStatus =="1"){
+          console.log("checking")
+          document.getElementById("Srmanager").style.display = "block";
+          document.getElementById("Srmanager_label").style.display = "block";
+
+          document.getElementById("manager").style.display = "none";
+          document.getElementById("manager_label").style.display = "none";
+
+        }
+        else if(SingleProjectStatus =="0"){
+          console.log("checking")
+          document.getElementById("manager").style.display = "block";
+          document.getElementById("manager_label").style.display = "block";
+
+          document.getElementById("Srmanager").style.display = "none";
+          document.getElementById("Srmanager_label").style.display = "none";
+        
+        }
+        else{
+          console.log("nothing to do");
+        }
+
+
+      
+    </script>
+
+
+
+
+
+

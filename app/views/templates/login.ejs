@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-11/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+
+<title>Login</title>
+</head>
+<body class="body-background">
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <div class="login-box">
+        <h2>LOGIN</h2>
+        <div class="mb-3">
+          <% if (alerts.error) { %>
+            <% alerts.error.forEach(function(msg) { %>
+              <p class="text-center text-danger"><%= msg %></p>
+            <% }); %>
+          <% } %>
+            </div>
+        <form action="/api/auth/signin" method="POST" autocomplete="off">
+          
+          <div class="user-box">
+            <input type="text" name="email" required>
+            <label>Email</label>
+          </div>
+          <div class="user-box">
+            <input type="password" name="password" required>
+            <label>Password </label>
+          </div>
+          <div class="user-box ">
+          </div>
+          <a href="#" class="button-submit">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <input type="submit" class="submit-button" value="Log In">
+          </a>
+        </form>
+        <span class="pl text-white text-size">New User:</span>
+        <a href="/register" class="pl padding">Sign up</a>
+        <a href="/" class="pl padding">Go back</a>
+      </div>
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+</body>
+</html>

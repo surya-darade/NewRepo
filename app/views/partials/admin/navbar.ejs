@@ -1,0 +1,130 @@
+<nav class="navbar navbar-expand-lg p-0">
+    <a class="navbar-brand ml-3" href="/admin_dashboard">Admin</a>
+    <button class="navbar-toggler color-blue" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav ml-auto">
+
+            <!-- <button type="button" class="btn btn-sm foo-btn-circle">Add <i
+                    class="align-middle material-icons">add</i></button> -->
+
+            <!-- <li class="nav-item active">
+                <a class="nav-link color-blue" href="/admin_dashboard">Home <span class="sr-only">(current)</span></a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link" href="/user-list">User list</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link color-blue" href="/getEnquiryList">Enquiry list</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link color-blue" href="/resumeList">Resume list</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle color-blue" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Tasks
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/completeTasks">Completed</a>
+                    <!-- <div class="dropdown-divider"></div> -->
+                    <a class="dropdown-item" href="/incompleteTasks">Incompleted</a>
+                    <a class="dropdown-item" href="/inprogressTasks">Inprogress</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link color-blue" href="/logout">Logout</a>
+            </li>
+            <li class="d-flex mr-5" style="width: min-content;">
+                <img src="assets/img/images.png" alt="" class="rounded-circle" width="80%" srcset=""><span class="pt-2 text-danger"><% if(!username){%> Expired!! <% } else{ %><%= username %><%}%> </span>
+                <!-- 
+                    assets/img/219986.png
+                    assets/img/user-512.webpz
+                    assets/img/4b71f8137985eaa992d17a315997791e.jpg
+                    assets/img/images.png
+                 -->
+            </li>
+        </ul>
+
+    </div>
+
+</nav>
+
+<div id="wrapper" class="">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+
+            <li class="">
+                <a href="/admin_dashboard">
+                    <i class="align-middle fas fa-home" aria-hidden="true"></i>
+                    <span class="">Dashboard</span>
+                </a>
+            </li>
+            <!-- <li>
+                <a href="/user-list">
+                    <i class="align-middle material-icons">menu</i>
+                    <span class="">Pages</span>
+                </a>
+            </li> -->
+            <li>
+                <a href="/getCodeList">
+                    <i class="align-middle fas fa-code" aria-hidden="true"></i>
+                    <span class="">Codes/Logics </span>
+                </a>
+                <a href="/uploadCode">
+                    <span class="ml-5">Upload Code</span>
+                </a>
+            </li>
+            <li>
+                <a href="/getNotifications">
+                    <i class="align-middle fas fa-bell"></i>
+                    <span class="">Notifications</span>
+                </a>
+                <a href="/uploadNotification">
+                    <span class="ml-5   ">Upload</span>
+                </a>
+            </li>
+           
+            <li>
+                <a href="/getStudyMaterial">
+                    <i class="fas fa-book"></i>
+                    <span class="">Study-material</span>
+                </a>
+                <a href="/uploadStudyMaterial">
+                    <span class="ml-5">Upload</span>
+                </a>
+            </li>
+            <li>
+                <a href="/uploadTask">
+                    <i class="fas fa-tasks"></i>
+                    <span class="">Upload Task</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="_blank">
+                    <i class="fas fa-envelope"></i>
+                    <span class="">Inbox</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="align-middle fas fa-comments"></i>
+                    <span class="">Chat</span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <!-- Body content -->
+    <div class="ml-5">
+        <div id="page-content-wrapper">
+
+            <a href="#menu-toggle" id="menu-toggle" class="toggle-btn color-blue" id="menu-toggle" onclick="myFunction()" style="margin-left: -48px!important;"><i
+                    class="fa fa-lg fa-caret-right"></i></a>

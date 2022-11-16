@@ -1,0 +1,14 @@
+nodemon index.js
+
+npm start
+
+----admin-----
+surya@gmail.com
+surya
+
+admin@gmail.com
+admin
+
+----user----
+user@gmail.com
+user

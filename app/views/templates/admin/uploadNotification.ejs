@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../../partials/admin/header') %>
+        <title>Upload Notifications</title>
+    </head>
+<body class="">
+    <%- include('../../partials/admin/navbar') %>
+
+    <div class="container ">
+        <div class="row justify-content-center">
+            <div class="col-12 mt-1">
+                <h1 class="text-center">Upload Notifications</h1>
+            </div>
+           
+            <div class="col-md-6 mt-2">
+                <div class="">
+                    <form action="uploadNotification" method="post" class="">
+                        <div>
+                            <% if(alerts.error){ %> 
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <%= alerts.error %>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                            <% } %>
+                            <% if(alerts.success){ %> 
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <%= alerts.success %>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                            <% } %> 
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="header" class="form-control" placeholder="Header" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="body" class="form-control" rows="3" required>Body</textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="footer" class="form-control" placeholder="Footer" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="date" name="date" id="" class="form-control" required>
+                        </div>
+                        <label for="">Status</label>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="exampleRadios1" value="Show" >
+                                <label class="form-check-label" for="exampleRadios1">
+                                  Show
+                                </label>
+                              </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="exampleRadios1" value="Hide" checked>
+                                <label class="form-check-label" for="exampleRadios1">
+                                  Hide
+                                </label>
+                              </div>
+                        </div>
+                       <div class="text-center">
+                        <button type="submit" class="btn btn-primary w-50">Submit</button>
+                       </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('../../partials/admin/footer') %>
+</body>
+
+</html>

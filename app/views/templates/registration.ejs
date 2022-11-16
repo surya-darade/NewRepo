@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-11/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Registration</title>
+</head>
+
+<body class="body-background">
+    <div class="background">
+        <div class="shape1"></div>
+        <div class="shape1"></div>
+    </div>
+    <div class="login-box">
+        <h2> REGISTRATION</h2>
+        <form method="post" action="/api/auth/signup" autocomplete="off">
+            <div class="user-box">
+                <input type="text" name="name" value="">
+                <label>Full Name</label>
+                <% if (alerts.name) { %>
+                    <div class="text-danger" style="margin-bottom: 0.8rem;">
+                        <%= alerts.name %>
+                    </div>
+                    <% } %>
+            </div>
+
+            <div class="user-box">
+                <input type="text" name="email" value="">
+                <label>Email Id</label>
+                <% if (alerts.email) { %>
+                    <div class="text-danger" style="margin-bottom: 0.8rem;">
+                        <%= alerts.email %>
+                    </div>
+                    <% } %>
+            </div>
+            <div class="user-box">
+                <input type="text" name="mobile" value="">
+                <label>Mobile no</label>
+                <% if (alerts.mobile) { %>
+                    <div class="text-danger" style="margin-bottom: 0.8rem;">
+                        <%= alerts.mobile %>
+                    </div>
+                    <% } %>
+            </div>
+            <div class="user-box">
+                <input type="text" name="username" value="">
+                <label>Username</label>
+                <% if (alerts.username) { %>
+                    <div class="text-danger" style="margin-bottom: 0.8rem;">
+                        <%= alerts.username %>
+                    </div>
+                    <% } %>
+                    
+            </div>
+            <div class="user-box">
+                <input type="password" name="password">
+                <label>Password</label>
+                <% if (alerts.password) { %>
+                    <div class="text-danger" style="margin-bottom: 0.8rem;">
+                        <%= alerts.password %>
+                    </div>
+                <% } %>
+            </div>
+            <div class="user-box d-none">
+                <input type="text" name="roles" value="user" required="">
+                <label>Role</label>
+            </div>
+
+            <a href="#" class="button-submit">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <input type="submit" class="submit-button" value="Register">
+            </a>
+
+        </form>
+        <span class="text-white ">Old User:</span><a href="/login" class="padding">Login</a><a href="/"
+            class="pl padding">Go back</a>
+    </div>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+</body>
+
+</html>

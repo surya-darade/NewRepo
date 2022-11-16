@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "62e38fe8eca90f26e50d7381"
+  },
+  "header": "Job Available!!",
+  "body": "Hello friends,\r\nI would like to inform you that our company is hiring software developers with specific skill set such as MEAN Stack.",
+  "footer": "Last date to apply: 15th August",
+  "date": "2022-07-29",
+  "status": "Show",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62e38ff7eca90f26e50d7383"
+  },
+  "header": "ads",
+  "body": "asdsdsBody",
+  "footer": "dddsd",
+  "date": "2022-07-29",
+  "status": "Hide",
+  "__v": 0
+}]

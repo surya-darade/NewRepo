@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('../../partials/user/header') %>
+
+<body>
+
+
+    <%- include('../../partials/user/navbar') %>
+
+
+<div class="container">
+    <div class="row d-flex  justify-content-center">
+        <div class="col-12 mt-5">
+            <h1 class="text-center">
+                Upload Resume
+            </h1>
+           
+        </div>
+        <div class="col-5 mt-1">
+            <form action="/uploadResume" method="post" class="" style="background-color: #fff;"  enctype="multipart/form-data">
+                <div class="">
+                    <% if(alerts.error){ %> 
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <%= alerts.error %>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                    <% } %>
+                    <% if(alerts.success){ %> 
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <%= alerts.success %>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                    <% } %> 
+                </div>
+                <div class="form-group">
+                    <label for="">User name:</label>
+                    <input type="text" name="username" class="form-control" id="" value="<%= username %>"  readonly required>
+                </div>
+                <div class="form-group">
+                    <label for="">Name:</label>
+                    <input type="text" name="name" class="form-control" id="" value="" required>
+                </div>
+                <div class="form-group">
+                    <label for="">Date:</label>
+                    <input type="date" name="date" class="form-control" id="" value="" required>
+                </div>
+                <div class="form-group">
+                    <label for="">Upload resume</label>
+                    <input type="file" name="file" class="form-control" id="" required>
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary w-50" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('../../partials/user/footer') %>
+
+</body>
+</html>

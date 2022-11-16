@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('../../partials/user/header') %>
+<style>
+    .my-custom-scrollbar {
+position: relative;
+height: 100%;
+overflow: auto;
+}
+.table-wrapper-scroll-y {
+display: block;
+}
+</style>
+<body>
+
+    <%- include('../../partials/user/navbar') %>
+
+
+    <section class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="text-center mt-3"> Study Material</h1>
+                   
+                   <div class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
+                    <table class="table table-striped bg-light mt-3">
+                        <thead>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Code</th>
+                            <th>Video Link</th>
+                            <th>Video</th>
+                            <th>Date</th>
+                            
+                        </thead>
+                        <tbody>
+                            <% studyMaterials.forEach(function(element){ %>
+                                <tr>
+                                    <td><%= element.name %></td>
+                                    <td><%= element.desc %></td>
+                                    <td><%= element.code %></td>
+                                    <td><a href="<%= element.video_link %>" target="video" >Video Link</a></td>
+                                    <td><a href="<%= element.fileName %>" target="video" >Video</a></td>
+                                    <td><%= element.date %></td>
+                                    
+                                </tr>
+                            
+                                <%  }); %>
+                         
+                                
+                
+                        </tbody>
+                    </table>
+                   </div>
+                </div>
+                <div class="col-12 mt-3">
+                    <div>
+                        <!-- <iframe src=""   name="video" style="border:none;" title="Iframe Example"></iframe> -->
+                        <iframe src="" width="100%" name="video" height="700px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+
+    var iframe = document.querySelector('iframe');
+    var player = new Vimeo.Player(iframe);
+
+    player.on('play', function() {
+        alert('You have played the video')
+    });
+        player.on('ended', function(){
+        alert('Video play completed');
+    });
+
+    player.getVideoTitle().then(function(title) {
+        console.log('title:', title);
+    });
+</script>
+    
+
+    <%- include('../../partials/user/footer') %>
+
+</body>
+
+</html>
