@@ -50,6 +50,7 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
 
+// database connection
 const db = require("./app/models");
 const Role = db.role;
 db.mongoose
